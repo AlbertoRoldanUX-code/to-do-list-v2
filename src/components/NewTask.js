@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./Form.js";
 
 function NewTask() {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const clickHandler = function () {
+    setIsEditing(true);
+  };
+
   return (
-    <div className="firstDiv">
-      <div>
-        <button className="btn">Add New Task</button>
-        <Form />
-      </div>
+    <div className="container">
+      {!isEditing && (
+        <div className="center">
+          <button onClick={clickHandler} className="btn">
+            Add New Task
+          </button>
+        </div>
+      )}
+      {isEditing && <Form />}
     </div>
   );
 }

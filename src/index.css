@@ -24,12 +24,6 @@ body {
   min-height: 100%;
 }
 
-.firstDiv {
-  margin: 30px auto;
-  max-width: 950px;
-  padding-bottom: 6rem;
-}
-
 h1,
 h2 {
   text-align: center;
@@ -64,9 +58,20 @@ h2 {
   color: white;
 }
 
-.form {
-  border-radius: 5px;
+.container {
+  margin: 30px auto;
+  max-width: 400px;
   background-color: #3e3f46;
+  border-radius: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form {
   margin: auto;
   max-width: 300px;
   padding: 40px;
