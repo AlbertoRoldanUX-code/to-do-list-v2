@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import NewTask from "./components/NewTask.js";
-import Tasks from "./components/Tasks.js";
+import Tasks from "./components/TasksList.js";
+
+const data = JSON.parse(localStorage.getItem("tasks"));
 
 function App() {
+  const [tasks, setTasks] = useState(data);
+
   const addTaskHandler = function (task) {
     console.log(task);
-    // localStorage.setItem("tasks", JSON.stringify(task));
+    localStorage.setItem("tasks", JSON.stringify(task));
   };
 
   return (
     <div>
       <h1>To Do List</h1>
       <NewTask onAddTask={addTaskHandler} />
-      <Tasks />
+      <Tasks items={Object.values(tasks)} />
     </div>
   );
 }

@@ -20,9 +20,10 @@ function Form(props) {
 
     const taskData = {
       task: enteredTask,
-      importance: enteredImportance,
-      urgency: enteredUrgency,
+      value: +enteredImportance + +enteredUrgency,
     };
+
+    console.log(taskData);
 
     setEnteredImportance("");
     setEnteredTask("");
