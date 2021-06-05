@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Form() {
-  const clickHandler = function (event) {
-    event.preventDefault();
-    console.log(event.target[0].value);
-    console.log(event.target[1].value);
-    console.log(event.target[1].value);
+  const [enteredTask, setEnteredTask] = useState("");
+  const [enteredImportance, setEnteredImportance] = useState("");
+  const [enteredUrgency, setEnteredUrgency] = useState("");
+
+  const taskChangeHandler = function (event) {
+    setEnteredTask(event.target.value);
+  };
+  const importanceChangeHandler = function (event) {
+    setEnteredImportance(event.target.value);
+  };
+  const urgencyChangeHandler = function (event) {
+    setEnteredUrgency(event.target.value);
+  };
+
+  const submitHandler = function (e) {
+    e.preventDefault();
+
+    const taskData = {
+      task: enteredTask,
+      importance: enteredImportance,
+      urgency: enteredUrgency,
+    };
+
+    console.log(taskData);
   };
 
   return (
-    <form onSubmit={clickHandler} className="form">
+    <form onSubmit={submitHandler} className="form">
       <div>
         <label className="label">Task</label>
         <textarea
@@ -18,17 +37,30 @@ function Form() {
           id=""
           cols="30"
           rows="3"
+          onChange={taskChangeHandler}
         ></textarea>
       </div>
       <div>
         <label className="label">
           How important is it in a scale of 1 to 10?
         </label>
-        <input className="input2" type="number" min="0" max="10" />
+        <input
+          onChange={importanceChangeHandler}
+          className="input2"
+          type="number"
+          min="0"
+          max="10"
+        />
       </div>
       <div>
         <label className="label">How urgent is it in a scale of 1 to 10?</label>
-        <input className="input3" type="number" min="0" max="10" />
+        <input
+          onChange={urgencyChangeHandler}
+          className="input3"
+          type="number"
+          min="0"
+          max="10"
+        />
       </div>
       <div className="margin">
         <button type="submit" className="btn" href="#tasks">
