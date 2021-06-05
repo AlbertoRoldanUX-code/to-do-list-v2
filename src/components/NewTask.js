@@ -3,11 +3,11 @@ import Form from "./Form.js";
 
 function NewTask() {
   return (
-    <div>
+    <div className="firstDiv">
       <div>
         <button className="btn">Add New Task</button>
+        <Form />
       </div>
-      <Form />
     </div>
   );
 }
