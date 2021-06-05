@@ -25,6 +25,10 @@ function Form() {
     };
 
     console.log(taskData);
+
+    setEnteredImportance("");
+    setEnteredTask("");
+    setEnteredUrgency("");
   };
 
   return (
@@ -38,6 +42,7 @@ function Form() {
           cols="30"
           rows="3"
           onChange={taskChangeHandler}
+          value={enteredTask}
         ></textarea>
       </div>
       <div>
@@ -50,6 +55,7 @@ function Form() {
           type="number"
           min="0"
           max="10"
+          value={enteredImportance}
         />
       </div>
       <div>
@@ -60,6 +66,7 @@ function Form() {
           type="number"
           min="0"
           max="10"
+          value={enteredUrgency}
         />
       </div>
       <div className="margin">
