@@ -2,16 +2,14 @@ import React from "react";
 
 function Form() {
   return (
-    <div class="firstDiv">
+    <div className="firstDiv">
       <div>
         <h1>To Do List</h1>
-        <form class="form">
+        <form className="form">
           <div>
-            <label class="label" for="">
-              Task
-            </label>
+            <label className="label">Task</label>
             <textarea
-              class="input1"
+              className="input1"
               name=""
               id=""
               cols="30"
@@ -19,19 +17,19 @@ function Form() {
             ></textarea>
           </div>
           <div>
-            <label class="label" for="">
+            <label className="label">
               How important is it in a scale of 1 to 10?
             </label>
-            <input class="input2" type="number" min="0" max="10" />
+            <input className="input2" type="number" min="0" max="10" />
           </div>
           <div>
-            <label class="label" for="">
+            <label className="label">
               How urgent is it in a scale of 1 to 10?
             </label>
-            <input class="input3" type="number" min="0" max="10" />
+            <input className="input3" type="number" min="0" max="10" />
           </div>
-          <div class="margin">
-            <a class="btn" href="#tasks">
+          <div className="margin">
+            <a className="btn" href="#tasks">
               Create task
             </a>
           </div>
