@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import Form from "./Form.js";
 
-function NewTask() {
+function NewTask(props) {
   const [isEditing, setIsEditing] = useState(false);
 
   const clickHandler = function () {
     setIsEditing(true);
+  };
+
+  const saveTaskDataHandler = function (enteredTaskData) {
+    const taskData = {
+      ...enteredTaskData,
+      id: Math.random().toString(),
+    };
+
+    props.onAddTask(taskData);
   };
 
   return (
@@ -17,7 +26,7 @@ function NewTask() {
           </button>
         </div>
       )}
-      {isEditing && <Form />}
+      {isEditing && <Form onSaveTaskData={saveTaskDataHandler} />}
     </div>
   );
 }

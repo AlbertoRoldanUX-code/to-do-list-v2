@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form() {
+function Form(props) {
   const [enteredTask, setEnteredTask] = useState("");
   const [enteredImportance, setEnteredImportance] = useState("");
   const [enteredUrgency, setEnteredUrgency] = useState("");
@@ -24,11 +24,11 @@ function Form() {
       urgency: enteredUrgency,
     };
 
-    console.log(taskData);
-
     setEnteredImportance("");
     setEnteredTask("");
     setEnteredUrgency("");
+
+    props.onSaveTaskData(taskData);
   };
 
   return (
