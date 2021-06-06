@@ -30,6 +30,8 @@ function Form(props) {
     props.onSaveTaskData(taskData);
   };
 
+  const clickHandler = function () {};
+
   return (
     <form onSubmit={submitHandler} className="form">
       <div>
@@ -73,8 +75,11 @@ function Form(props) {
         />
       </div>
       <div className="margin">
-        <button type="submit" className="btn" href="#tasks">
+        <button type="submit" className="btn">
           Create task
+        </button>
+        <button className="btn-cancel" onClick={props.onCancel}>
+          Cancel
         </button>
       </div>
     </form>

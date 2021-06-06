@@ -8,6 +8,10 @@ function NewTask(props) {
     setIsEditing(true);
   };
 
+  const stopEditingHandler = function () {
+    setIsEditing(false);
+  };
+
   const saveTaskDataHandler = function (enteredTaskData) {
     const taskData = {
       ...enteredTaskData,
@@ -26,7 +30,12 @@ function NewTask(props) {
           </button>
         </div>
       )}
-      {isEditing && <Form onSaveTaskData={saveTaskDataHandler} />}
+      {isEditing && (
+        <Form
+          onSaveTaskData={saveTaskDataHandler}
+          onCancel={stopEditingHandler}
+        />
+      )}
     </div>
   );
 }
