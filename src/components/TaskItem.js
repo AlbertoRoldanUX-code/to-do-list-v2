@@ -1,7 +1,7 @@
 import React from "react";
 
-function TaskItem() {
-  return <div></div>;
+function TaskItem(props) {
+  return <li>{props.title}</li>;
 }
 
 export default TaskItem;

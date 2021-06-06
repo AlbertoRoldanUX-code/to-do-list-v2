@@ -23,8 +23,6 @@ function Form(props) {
       value: +enteredImportance + +enteredUrgency,
     };
 
-    console.log(taskData);
-
     setEnteredImportance("");
     setEnteredTask("");
     setEnteredUrgency("");

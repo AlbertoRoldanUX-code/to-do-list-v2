@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import NewTask from "./components/NewTask.js";
-import Tasks from "./components/TasksList.js";
-
-const data = JSON.parse(localStorage.getItem("tasks"));
+import TasksList from "./components/TasksList.js";
 
 function App() {
-  const [tasks, setTasks] = useState(data);
+  // const data = JSON.parse(localStorage.getItem("tasks"));
+  // console.log(data);
+  const [tasks, setTasks] = useState("");
 
   const addTaskHandler = function (task) {
-    console.log(task);
-    localStorage.setItem("tasks", JSON.stringify(task));
+    // localStorage.setItem("tasks", JSON.stringify(task));
+    setTasks((prevTasks) => {
+      return [task, ...prevTasks];
+    });
   };
 
   return (
     <div>
       <h1>To Do List</h1>
       <NewTask onAddTask={addTaskHandler} />
-      <Tasks items={Object.values(tasks)} />
+      <TasksList items={Object.values(tasks)} />
     </div>
   );
 }
