@@ -6,11 +6,11 @@ function Tasks(props) {
   props.items.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
 
   return (
-    <ul>
+    <ol>
       {props.items.map((task) => (
         <TaskItem key={task.id} title={task.task} value={task.value} />
       ))}
-    </ul>
+    </ol>
   );
 }
 

@@ -30,13 +30,10 @@ function Form(props) {
     props.onSaveTaskData(taskData);
   };
 
-  const clickHandler = function () {};
-
   return (
     <form onSubmit={submitHandler} className="form">
       <div>
         <label className="label">Task</label>
-
         <textarea
           className="input1"
           name=""
