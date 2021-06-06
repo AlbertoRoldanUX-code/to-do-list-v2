@@ -28,6 +28,8 @@ function Form(props) {
     setEnteredUrgency("");
 
     props.onSaveTaskData(taskData);
+
+    props.onCreate();
   };
 
   return (

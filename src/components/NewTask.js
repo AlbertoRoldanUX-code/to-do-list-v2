@@ -34,6 +34,7 @@ function NewTask(props) {
         <Form
           onSaveTaskData={saveTaskDataHandler}
           onCancel={stopEditingHandler}
+          onCreate={stopEditingHandler}
         />
       )}
     </div>
