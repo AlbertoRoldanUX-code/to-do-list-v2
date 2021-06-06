@@ -139,9 +139,9 @@ h2 {
   flex-wrap: wrap;
 }
 
-.li {
+/* .li {
   opacity: 0;
-}
+} */
 
 .fadeIn {
   opacity: 1;
