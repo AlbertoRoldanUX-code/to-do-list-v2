@@ -34,6 +34,7 @@ function Form(props) {
     <form onSubmit={submitHandler} className="form">
       <div>
         <label className="label">Task</label>
+
         <textarea
           className="input1"
           name=""
@@ -42,12 +43,14 @@ function Form(props) {
           rows="3"
           onChange={taskChangeHandler}
           value={enteredTask}
+          required
         ></textarea>
       </div>
       <div>
         <label className="label">
-          How important is it in a scale of 1 to 10?
+          How important is it in a scale of 0 to 10?
         </label>
+
         <input
           onChange={importanceChangeHandler}
           className="input2"
@@ -58,7 +61,8 @@ function Form(props) {
         />
       </div>
       <div>
-        <label className="label">How urgent is it in a scale of 1 to 10?</label>
+        <label className="label">How urgent is it in a scale of 0 to 10?</label>
+
         <input
           onChange={urgencyChangeHandler}
           className="input3"
