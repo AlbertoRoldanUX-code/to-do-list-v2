@@ -11,11 +11,21 @@ function App() {
     });
   };
 
+  const deleteItemHandler = function (taskId) {
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.filter((task) => task.id !== taskId);
+      return updatedTasks;
+    });
+  };
+
   return (
     <div>
       <h1>To Do List</h1>
       <NewTask onAddTask={addTaskHandler} />
-      <TasksList items={Object.values(tasks)} />
+      <TasksList
+        items={Object.values(tasks)}
+        onDeleteItem={deleteItemHandler}
+      />
     </div>
   );
 }
