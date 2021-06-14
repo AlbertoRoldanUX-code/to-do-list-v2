@@ -165,6 +165,8 @@ h1 {
 ol {
   counter-reset: my-awesome-counter;
   list-style: none;
+  max-width: 600px;
+  margin: auto;
 }
 
 /* li {
