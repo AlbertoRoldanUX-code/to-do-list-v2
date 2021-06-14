@@ -61,7 +61,7 @@ h2 {
 }
 
 .btn {
-  background: #00ff9d;
+  background: #169b21;
   border-radius: 8px;
   color: #fff;
   font-size: 20px;
@@ -98,8 +98,7 @@ h2 {
 }
 
 .btn:hover {
-  border: solid #337fed 1px;
-  background: #4f8852;
+  background: #00d30b;
 }
 
 .btn:active {
