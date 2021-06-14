@@ -21,13 +21,13 @@ function App() {
     });
   };
 
-  console.log(tasks);
+  console.log(tasks.sort((a, b) => parseFloat(b.value) - parseFloat(a.value)));
 
   return (
     <div>
       <h1>To Do List</h1>
       <NewTask onAddTask={addTaskHandler} />
-      <TasksList items={tasks} onDeleteItem={deleteItemHandler} />
+      {tasks && <TasksList items={tasks} onDeleteItem={deleteItemHandler} />}
     </div>
   );
 }
