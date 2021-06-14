@@ -3,13 +3,16 @@ import NewTask from "./components/NewTask.js";
 import TasksList from "./components/TasksList.js";
 
 function App() {
-  const [tasks, setTasks] = useState("");
+  const data = JSON.parse(localStorage.getItem("tasks"));
+
+  const [tasks, setTasks] = useState(data);
 
   const addTaskHandler = function (task) {
     setTasks((prevTasks) => {
       return [task, ...prevTasks];
     });
   };
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 
   const deleteItemHandler = function (taskId) {
     setTasks((prevTasks) => {

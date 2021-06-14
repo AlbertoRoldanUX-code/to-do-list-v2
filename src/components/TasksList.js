@@ -3,11 +3,13 @@ import TaskItem from "./TaskItem";
 
 function Tasks(props) {
   // Order tasks by value
-  props.items.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
+  props.items.sort((a, b) => parseFloat(b.value) - parseFloat(a.value));
 
   const deleteHandler = function (id) {
     props.onDeleteItem(id);
   };
+
+  console.log(props);
 
   return (
     <ol>
