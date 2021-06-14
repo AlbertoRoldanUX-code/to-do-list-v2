@@ -9,8 +9,6 @@ function Tasks(props) {
     props.onDeleteItem(id);
   };
 
-  console.log(props);
-
   return (
     <ol>
       {props.items.map((task) => (
