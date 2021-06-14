@@ -21,14 +21,13 @@ function App() {
     });
   };
 
+  console.log(tasks);
+
   return (
     <div>
       <h1>To Do List</h1>
       <NewTask onAddTask={addTaskHandler} />
-      <TasksList
-        items={Object.values(tasks)}
-        onDeleteItem={deleteItemHandler}
-      />
+      <TasksList items={tasks} onDeleteItem={deleteItemHandler} />
     </div>
   );
 }
