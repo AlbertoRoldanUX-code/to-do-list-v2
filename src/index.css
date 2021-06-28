@@ -139,10 +139,9 @@ h1 {
 }
 
 .task {
-  border: solid #ad6254 1px;
-  border-radius: 5px;
+  color: white;
   padding: 1rem 2rem;
-  margin: 1.75rem auto;
+  margin: 0rem auto;
   gap: 0.5rem 2.5rem;
   transition: all 0.5s, transform 1ms;
   max-width: 400px;
@@ -212,16 +211,19 @@ ol {
 
 ol li {
   margin: 0 0 0.5rem 0;
+  background-color: darkslateblue;
+  border: solid #ad6254 1px;
+  border-radius: 10px;
   counter-increment: my-awesome-counter;
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
 }
 ol li::before {
   position: absolute;
   --size: 32px;
   left: calc(-1 * var(--size) - 10px);
   content: '0' counter(my-awesome-counter);
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 /* Footer */
@@ -247,11 +249,15 @@ ol li::before {
 
 /* Responsiveness */
 @media only screen and (max-width: 800px) {
+  ol {
+    margin: 0 8px;
+  }
+
   .form {
     padding: 20px;
   }
 
   .task {
-    margin: 1.75rem 0.5rem;
+    padding: 0 1rem;
   }
 }
