@@ -1,5 +1,5 @@
-import React from "react";
-import TaskItem from "./TaskItem";
+import React from 'react';
+import TaskItem from './TaskItem';
 
 function Tasks(props) {
   // Order tasks by value
@@ -10,7 +10,7 @@ function Tasks(props) {
   };
 
   return (
-    <ol>
+    <ol className='tasks'>
       {props.items.map((task) => (
         <TaskItem
           key={task.id}

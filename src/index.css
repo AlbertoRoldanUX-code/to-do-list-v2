@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: aliceblue;
   margin: 0;
   position: relative;
@@ -148,6 +148,41 @@ h1 {
   max-width: 400px;
   display: flex;
   flex-wrap: wrap;
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tasks {
+  animation: tasks-appear 1s ease-out forwards;
+}
+
+@keyframes tasks-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fadeIn {
@@ -185,7 +220,7 @@ ol li::before {
   position: absolute;
   --size: 32px;
   left: calc(-1 * var(--size) - 10px);
-  content: "0" counter(my-awesome-counter);
+  content: '0' counter(my-awesome-counter);
   font-size: 3rem;
 }
 
