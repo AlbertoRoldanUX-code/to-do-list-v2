@@ -10,7 +10,7 @@ function Tasks(props) {
   };
 
   return (
-    <ol className='tasks'>
+    <ol>
       {props.items.map((task) => (
         <TaskItem
           key={task.id}

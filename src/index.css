@@ -9,6 +9,7 @@ body {
 h1 {
   text-align: center;
   font-weight: 500;
+  font-size: 40px;
 }
 
 .input1 {
@@ -147,6 +148,54 @@ h1 {
   max-width: 400px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.fadeIn {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms linear;
+  transition: opacity 1000ms linear;
+}
+
+#tasks {
+  max-width: 600px;
+  margin: auto;
+}
+
+ol {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+  animation: tasks-appear 1s ease-out forwards;
+}
+
+@keyframes tasks-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* li {
+  opacity: 1;
+  /* Fade effect */
+/* -webkit-transition: opacity 1000ms linear;
+  transition: opacity 1000ms linear; */
+/* } */
+
+ol li {
+  margin: 0 0 0.5rem 0;
+  background-color: darkslateblue;
+  border: solid #ad6254 1px;
+  border-radius: 10px;
+  counter-increment: my-awesome-counter;
+  position: relative;
+  font-size: 1.3rem;
   animation: bump 300ms ease-out;
 }
 
@@ -168,56 +217,6 @@ h1 {
   }
 }
 
-.tasks {
-  animation: tasks-appear 1s ease-out forwards;
-}
-
-@keyframes tasks-appear {
-  from {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeIn {
-  opacity: 1;
-  -webkit-transition: opacity 1000ms linear;
-  transition: opacity 1000ms linear;
-}
-
-#tasks {
-  max-width: 600px;
-  margin: auto;
-}
-
-ol {
-  counter-reset: my-awesome-counter;
-  list-style: none;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* li {
-  opacity: 1;
-  /* Fade effect */
-/* -webkit-transition: opacity 1000ms linear;
-  transition: opacity 1000ms linear; */
-/* } */
-
-ol li {
-  margin: 0 0 0.5rem 0;
-  background-color: darkslateblue;
-  border: solid #ad6254 1px;
-  border-radius: 10px;
-  counter-increment: my-awesome-counter;
-  position: relative;
-  font-size: 1.3rem;
-}
 ol li::before {
   position: absolute;
   --size: 32px;
